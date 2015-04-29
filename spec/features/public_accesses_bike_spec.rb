@@ -1,15 +1,3 @@
-class DockingStation
-	def release_bike
-	end
-
-	def working?
-		
-	end
-end
-
-
-
-
 feature 'member of public accesses bike' do 
 	scenario 'docking station releases a working bike' do 
 		docking_station = DockingStation.new
