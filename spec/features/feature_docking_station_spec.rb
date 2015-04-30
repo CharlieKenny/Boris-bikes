@@ -22,6 +22,6 @@ feature 'Should be able to access docking station' do
 
   scenario 'Station does not release bike when none available' do
     docking_station = DockingStation.new
-    expect { docking_station.release_bike }.to raise_error 'No bikes here!'
+    expect { docking_station.release_bike }.to raise_error 'No bikes available'
   end
 end

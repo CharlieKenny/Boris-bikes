@@ -10,8 +10,7 @@ class DockingStation
   end
 
   def release_bike
-    fail 'No bikes here!' if empty?
-    fail 'No bikes available' if bikes.select {|b| !b.broken?}.count == 0
+    fail 'No bikes available' if empty? || bikes.select {|b| !b.broken?}.count == 0
     bikes.pop
   end
 
