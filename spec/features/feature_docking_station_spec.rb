@@ -1,3 +1,16 @@
+feature 'Should create new docking station' do
+  scenario 'default capacity' do
+    docking_station = DockingStation.new
+    expect(docking_station.capacity).to eq docking_station.instance_variable_get(:@capacity)
+  end
+
+  scenario 'custom capacity 50' do
+    docking_station = DockingStation.new 50
+    expect(docking_station.capacity).to eq 50
+  end
+
+end
+
 feature 'Should be able to access docking station' do
 
   scenario 'Get working bike from docking station' do
