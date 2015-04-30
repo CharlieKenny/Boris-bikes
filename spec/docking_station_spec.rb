@@ -5,7 +5,7 @@ describe DockingStation do
 
   it 'should default to 20' do
     docking_station = DockingStation.new
-    expect(docking_station.capacity).to eq docking_station.instance_variable_get(:@capacity)
+    expect(docking_station.capacity).to eq docking_station.capacity
   end
 
   it 'should allow custom capacity' do
@@ -23,7 +23,7 @@ describe DockingStation do
 
   it 'should raise error when full' do
     docking_station = DockingStation.new
-    docking_station.instance_variable_get(:@capacity).times {subject.dock Bike.new}
+    docking_station.capacity.times {subject.dock Bike.new}
     expect { subject.dock Bike.new }.to raise_error 'Docking station full'
     end
 

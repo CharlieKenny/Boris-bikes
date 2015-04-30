@@ -11,6 +11,7 @@ class DockingStation
 
   def release_bike
     fail 'No bikes here!' if empty?
+    fail 'No bikes available' if bikes.select {|b| !b.broken?}.count == 0
     bikes.pop
   end
 
@@ -18,6 +19,7 @@ class DockingStation
     fail 'Docking station full' if full?
       bikes << bike
   end
+
 
   private
 

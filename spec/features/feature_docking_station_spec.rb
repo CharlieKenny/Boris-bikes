@@ -1,7 +1,7 @@
 feature 'Should create new docking station' do
   scenario 'default capacity' do
     docking_station = DockingStation.new
-    expect(docking_station.capacity).to eq docking_station.instance_variable_get(:@capacity)
+    expect(docking_station.capacity).to eq docking_station.capacity
   end
 
   scenario 'custom capacity 50' do
