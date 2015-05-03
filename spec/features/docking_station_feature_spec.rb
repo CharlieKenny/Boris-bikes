@@ -20,4 +20,8 @@ feature DockingStation do
     docking_station.release
     expect(bike.working).to be true
   end
+
+  scenario 'should throw error if no bikes available' do
+    expect { docking_station.release }.to raise_error 'No bikes available'
+  end
 end
