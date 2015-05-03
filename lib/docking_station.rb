@@ -7,8 +7,9 @@ class DockingStation
     @bikes = []
   end
 
-  def dock(bike)
+  def dock(bike, working = true)
     @bikes << bike
+    bike.working = false if working == false
   end
 
   def release
