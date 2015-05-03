@@ -13,7 +13,7 @@ class DockingStation
   end
 
   def release
-    fail 'No bikes available' if bikes.empty?
+    fail 'No bikes available' if bikes.select(&:working?).empty?
     @bikes.pop
   end
 end

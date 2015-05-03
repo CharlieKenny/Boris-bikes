@@ -13,6 +13,7 @@ describe DockingStation do
 
   it 'should release a bike' do
     bike = double :bike
+    allow(bike).to receive(:working?) { true }
     docking_station.dock bike
     docking_station.release
     expect(docking_station.bikes.count).to be 0

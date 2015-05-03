@@ -14,6 +14,11 @@ feature DockingStation do
     expect(bike).to_not be_working
   end
 
+  scenario 'should not release a broken bike' do
+    docking_station.dock(bike, false)
+    expect{ docking_station.release }.to raise_error 'No bikes available'
+  end
+
   scenario 'should decrease count when releasing bike' do
     docking_station.dock bike
     docking_station.release
